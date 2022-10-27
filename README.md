@@ -51,4 +51,4 @@ So, I go hiking and used Strava software to track my hike. I export .gpx file fr
 - [x] Trails layer
 - [x] Trails layers popup selection
 - [ ] Add cave features on popup in cave layer
-- [ ] Branch cleanup (create a develop branch)
+- [x] Branch cleanup (create a develop branch)
