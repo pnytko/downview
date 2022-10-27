@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DownView</title>
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.9.0/build/ol.js"></script>
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/3.18.3/minified.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.9.0/css/ol.css" type="text/css">
+	<link rel="stylesheet" href="./style.css">
+	<link rel="shortcut icon" href="./favicon.ico">
+</head>
+<body>
+	<div class="logo">
+		<img src="img\logo.png" alt="alt"> 
+	</div>
+
+	<div id="download_pdf">
+		<img src="img\export_as_pdf.png" alt="alt" id="eapdf"> 
+	</div>
+
+	<svg class = "navi" height="120px" width="120px">
+		<circle cx="60" cy="60" r="50" stroke="white" stroke-width="5" fill="red" />
+		Brak wsparcia dla SVG.
+	</svg> 
+
+	<div class="N"><img src="img\N.png" alt="alt" id="N" name ="dir" onclick="direction('N')"> </div>
+	
+	<div class="S"><img src="img\S.png" alt="alt" id="S" name ="dir" onclick="direction('S')"> </div>
+	
+	<div class="E"><img src="img\E.png" alt="alt" id="E" name ="dir" onclick="direction('E')"> </div>
+	
+	<div class="W"><img src="img\W.png" alt="alt" id="W" name ="dir" onclick="direction('W')"> </div>
+	
+	<div class="C"><img src="img\C.png" alt="alt" id="C" name ="dir" onclick="direction()"> </div>
+
+	<div class="grid-container">
+		<div class="grid-1">
+			<div class="sidebar">
+			
+				<h3>WARSTWY</h3>
+					<input type="checkbox" onclick="ToogleLayersWMS_Osm()" id="osm-wms"checked>OSM<br>
+					<input type="checkbox" onclick="ToogleLayersWMS_Wektory()" id="vector-wms"checked>Wektory<br>
+					<input type="checkbox" onclick="ToggleLayersWMS_Ulice()" id="ulice-wms">Ulice<br>
+					<input type="checkbox" onclick="ToggleLayersWMS_Dzialki()" id="dzialki-wms">Działki<br>
+					<input type="checkbox" onclick="ToggleLayersWMS_OrtoHD()" id="ortoHD-wms">OrtoHD<br>
+					<!-- <input type="checkbox" value="MiegMap" onclick="ToggleLayersWMS_MiegMap()" id="miegmap-wms">Mapa Miega<br> -->
+					<input type="checkbox" onclick="ToggleLayersWMS_Cieniowanie()" id="cieniowanie-wms">DEM<br>
+					<input type="checkbox" onclick={ToggleLayersWMS_Szlaki(this);DisplayPopupDiv_trails()} id="szlaki-wms" >Szlaki<br>
+					<input type="checkbox" onclick="ToggleLayersWMS_Jaskinie()" id="jaskinie-wms">Jaskinie<br>
+					
+				
+				<h3>POMIARY</h3>
+					<form class="form-inline">
+						<label for="type">Typ pomiaru:</label> </br> 
+						<div id="okienko">	
+							<select id="type">
+								<option value="length">Długość</option>
+								<option value="area">Powierzchnia</option>
+							</select> </br>
+						</div>
+					<div id = "measurement_div">
+						<input id = "measureCheckbox" type="checkbox" onclick="ToogleMeasures()">Pomiar</br>
+						<button id="clearbtn" type="button" onclick="ClearMeasurements()">Wyczyść</button>
+					</div>
+
+					</form>
+
+				<h3>POŁOŻENIE</h3>
+				
+					<form>
+						<label for="projection">Projekcja:</label>
+						<div id="okienko">	
+							<select id="projection">
+								<option value="EPSG:4326">EPSG:4326</option>
+								<option value="EPSG:3857">EPSG:3857</option>
+							</select> </br> </br>
+							
+						<label for="precision">Precyzja (0-12)</label> </br>
+						<div id="okienko">
+							<input id="precision" type="number" min="0" max="12" value="4"/>
+						</div>
+					</form>
+					</div>	
+					
+				<div id = "aboutdiv">		
+					<button id="aboutbutton" onclick="DisplayPopupDiv()">O aplikacji</button>
+				</div>
+			</div>
+		</div>
+			
+		<div class="grid-2">
+			<div id="map" class="map">
+			<div id="mouse-position"></div>
+			<div id="popup-div" class="popup-div-novisible">
+				<div class="control-bar">
+					<div class="btn-close" onclick="ClosePopup()">x</div>
+				</div>
+				<h2 id="pop">O aplikacji Downview</h2>
+				<h3 id="pop">Czym jest i dla kogo jest aplikacja?</h3>
+					<p id="pop">Downview jest projektem niekomercyjnym wykonanym w celach edukacyjnych. Zakres map zawiera się dla powiatu tarnowskiego i
+					okolic, jednakże niektóre usługi (np. OrtoHD, OSM czy działki) dostępne są dla całej Polski. Projekt skupiony jest głównie na rozwiązaniach
+					dla map historycznych. Dostarczane usługi mogą być przydatne dla archeologów, historyków, odkrywców czy detektorystów.</p> 
+				<h3 id="pop">Podstawowe aspekty techniczne aplikacji</h3>
+					<p id="pop">Aplikacja korzysta z biblioteki OpenLayers6 i integruje
+					różne typy danych w postaci <b>warstw</b>. Część map funkcjonuje jako serwisy WMS, a część jako dane magazynowane na hostingu.</p>
+				<h3 id="pop">Podziękowania</h3>
+					<p id = "pop">Autor aplikacji pragnie podziękować za pomoc merytoryczną:</p>
+				<div id="pop">	
+					<ul>
+						<li>K.S.</li>
+						<li>K.Ł.</li>
+						<li>D.J.</li>
+						<li>M.C.</li>
+					</ul>
+				</div>
+				
+				<div class="bg"></div>
+				</div>
+
+				<div id="trails-popup" class="popup-div-novisible">
+					<div class="control-bar">
+						<div class="btn-close" onclick="ClosePopup_trails()">x</div>
+					</div>
+					<div id="pop-trails">	
+						<ul>
+							<li>Szlak <span style="color: #ffbf00; font-weight: bold">ŻÓŁTY</span><input type="checkbox" onclick="ToogleLayersWMS_Szlaki_Yellow()" id="tr_y"></li>
+							<li>Szlak <span style="color: green; font-weight: bold">ZIELONY</span><input type="checkbox" onclick="ToogleLayersWMS_Szlaki_Green()" id="tr_g"></li>
+							<li>Szlak <span style="color: blue; font-weight: bold">NIEBIESKI</span><input type="checkbox" onclick="ToogleLayersWMS_Szlaki_Blue()" id="tr_b"></li>
+							<li>Szlak <span style="color: red; font-weight: bold">CZERWONY</span><input type="checkbox" onclick="ToogleLayersWMS_Szlaki_Red()" id="tr_r"></li>
+							<li>Szlak <span style="color: black; font-weight: bold">CZARNY</span><input type="checkbox" onclick="ToogleLayersWMS_Szlaki_Black()" id="tr_bl"></li>
+						</ul>
+					</div>
+					<div class="bg"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script src="./script.js"></script>
+	<script src="./measures.js"></script>
+	<script src="./directions.js"></script>
+	<script src="./drag_and_drop.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</body>
+</html>
