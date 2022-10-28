@@ -219,6 +219,13 @@ z-index: 10;
     font-weight: bold;
     cursor: pointer;
     font-size: 20px;
+    border-radius: 5px;
+    border: 1px solid black;
+    opacity: 0.5;
+}
+
+#popup-div .control-bar .btn-close:hover {
+  opacity: 1
 }
 
 #trails-popup .control-bar .btn-close{
@@ -234,6 +241,13 @@ z-index: 10;
   font-weight: bold;
   cursor: pointer;
   font-size: 20px;
+  border-radius: 5px;
+  border: 1px solid black;
+  opacity: .5;
+}
+
+#trails-popup .control-bar .btn-close:hover {
+  opacity: 1
 }
 
 #pop{
