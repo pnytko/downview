@@ -154,7 +154,7 @@ draw.on('drawend', function () {
   
 }
 
-//Tworzenie nowego Tooltipa
+//TwWORZENIE NOWEGO TOOLTIPA
 
 function createHelpTooltip() {
   if (helpTooltipElement) {
@@ -170,7 +170,7 @@ function createHelpTooltip() {
   map.addOverlay(helpTooltip);
 }
 
-//Tworzenie nowego Tooltipa pomiarowego
+//TWORZENIE NOWEGO TOOLTIPA POMIAROWEGO
 
 function createMeasureTooltip() {
   if (measureTooltipElement) {
@@ -186,4 +186,11 @@ function createMeasureTooltip() {
     insertFirst: false,
   });
   map.addOverlay(measureTooltip);
+}
+
+//CZYSZCZENIE POMIARÓW
+
+function ClearMeasurements(){
+  vector_layer.getSource().getFeatures().forEach(feature=>vector_layer.getSource().removeFeature(feature));
+  map.getOverlays().clear()
 }
