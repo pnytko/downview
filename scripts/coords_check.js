@@ -1,11 +1,6 @@
 //POMIARY WSPÓŁRZĘDNYCH
 
-const mousePositionControl = new ol.control.MousePosition({
-	coordinateFormat: ol.coordinate.createStringXY(4),
-	projection: 'EPSG:4326',
-	className: 'custom-mouse-position',
-	target: document.getElementById('mouse-position'),
-});
+
 
 const projectionSelect = document.getElementById('projection');
 projectionSelect.addEventListener('change', function (event) {

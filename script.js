@@ -239,6 +239,15 @@ visible: false,
   zIndex: 10
 });
 
+//ABY ZAPEWNIĆ ODPOWIEDNIĄ SYNCHRONIZACJĘ
+
+const mousePositionControl = new ol.control.MousePosition({
+	coordinateFormat: ol.coordinate.createStringXY(4),
+	projection: 'EPSG:4326',
+	className: 'custom-mouse-position',
+	target: document.getElementById('mouse-position'),
+});
+
 //WARSTWA MAPY - INTEGRACJA MAP
 
 let interaction = new ol.interaction.DragRotateAndZoom(); //ROTACJA SHIFT+LPM

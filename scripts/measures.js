@@ -149,7 +149,6 @@ draw.on('drawend', function () {
 	}
 	else{
 		map.removeInteraction(draw)
-		map.removeInteraction(helpMessage)
 	}
   
 }
