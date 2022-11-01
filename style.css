@@ -398,3 +398,29 @@ cursor: pointer;
 .ol-attribution.ol-unselectable.ol-control.ol-uncollapsible{
   visibility: hidden;
 }
+
+.wrapper{
+  background: #fff;
+  width: 450px;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  border-radius: 10px;
+  z-index: 9999;
+  transform: translate(-50%,-50%);
+}
+
+.wrapper header{
+  color:#6f36ff;
+  font-size: 23px;
+  font-weight: 500;
+  padding: 17px 30px;
+  border-bottom: 1px solid #bfbfbf;
+}
+
+.wrapper .content{
+  margin: 30px 30px 40px;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
