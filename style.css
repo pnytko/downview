@@ -1,12 +1,12 @@
 *{
    box-sizing: border-box;
-   font-family: 'Roboto', sans-serif;
+   font-family: 'Poppins', sans-serif;
 }
 
 body{
 	margin: 0;
 	padding: 0;
-	font-family: 'Roboto';
+	font-family: 'Poppins';
 	font-size: 20px;
 }
 
@@ -60,6 +60,9 @@ position: absolute;
 bottom: 10px;
 right: 10px;
 z-index: 10;
+-webkit-user-select: none;
+-ms-user-select: none;
+user-select: none;
 }
 
 .btn{
@@ -120,6 +123,9 @@ z-index: 10;
 	display: inline-block;
 	text-decoration: none;
 	cursor: pointer;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
 }
 
@@ -258,6 +264,9 @@ z-index: 10;
 #pop-trails{
 	padding-left: 8px;
 	padding-right: 8px;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 #mouse-position{
 	position: fixed;
@@ -314,6 +323,9 @@ top: 23px;
 right: 58px;
 z-index: 11;
 cursor: pointer;
+-webkit-user-select: none;
+-ms-user-select: none;
+user-select: none;
 }
 
 #download_pdf{
@@ -323,6 +335,9 @@ cursor: pointer;
   z-index: 10;
   opacity: 50%;
   cursor: pointer;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 #download_pdf:hover {
@@ -342,6 +357,9 @@ right: 58px;
 z-index: 11;
 height: 37px;
 cursor: pointer;
+-webkit-user-select: none;
+-ms-user-select: none;
+user-select: none;
 }
 
 .S:hover {
@@ -355,7 +373,11 @@ top: 57px;
 right: 25px;
 z-index: 11;
 cursor: pointer;
+-webkit-user-select: none;
+-ms-user-select: none;
+user-select: none;
 }
+
 .E:hover {
 
   background: url('img/E_hover.png');
@@ -366,6 +388,9 @@ top: 57px;
 right: 91px;
 z-index: 11;
 cursor: pointer;
+-webkit-user-select: none;
+-ms-user-select: none;
+user-select: none;
 }
 
 .W:hover {
@@ -380,6 +405,9 @@ right: 58px;
 z-index: 11;
 height:40px;
 cursor: pointer;
+-webkit-user-select: none;
+-ms-user-select: none;
+user-select: none;
 }
 
 .C:hover {
@@ -411,11 +439,14 @@ cursor: pointer;
 }
 
 .wrapper header{
-  color:#6f36ff;
+  color:red;
   font-size: 23px;
   font-weight: 500;
   padding: 17px 30px;
   border-bottom: 1px solid #bfbfbf;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 .wrapper .content{
