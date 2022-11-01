@@ -13,13 +13,7 @@
 	<link rel="shortcut icon" href=".\img\favicon.ico">
 </head>
 <body>
-	<div class="wrapper"> 
-		<header>Szlaki Turystyczne</header>
-		<div class="content">
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam exercitationem, nisi, praesentium officia rem animi nobis ipsum facilis a, repellendus laudantium? Aspernatur voluptates nisi sunt nulla magnam suscipit repellat dolorum.</p>
-		</div>
 
-	</div>
 
 
 	<div class="logo">
@@ -57,7 +51,7 @@
 					<input type="checkbox" onclick="ToggleLayersWMS_OrtoHD()" id="ortoHD-wms">OrtoHD<br>
 					<!-- <input type="checkbox" value="MiegMap" onclick="ToggleLayersWMS_MiegMap()" id="miegmap-wms">Mapa Miega<br> -->
 					<input type="checkbox" onclick="ToggleLayersWMS_Cieniowanie()" id="cieniowanie-wms">DEM<br>
-					<input type="checkbox" onclick={ToggleLayersWMS_Szlaki(this);DisplayPopupDiv_trails()} id="szlaki-wms" >Szlaki<br>
+					<input type="checkbox" onclick={ToggleLayersWMS_Szlaki(this);DisplayWrapper()} id="szlaki-wms" >Szlaki<br>
 					<input type="checkbox" onclick="ToggleLayersWMS_Jaskinie()" id="jaskinie-wms">Jaskinie<br>
 					
 				
@@ -128,21 +122,23 @@
 				
 				<div class="bg"></div>
 				</div>
-
-				<div id="trails-popup" class="popup-div-novisible">
-					<div class="control-bar">
-						<div class="btn-close" onclick="ClosePopup_trails()">x</div>
-					</div>
-					<div id="pop-trails">	
-						<ul>
-							<li>Szlak <span style="color: #ffbf00; font-weight: bold">ŻÓŁTY</span><input type="checkbox" onclick="ToogleLayersWMS_Szlaki_Yellow()" id="tr_y"></li>
-							<li>Szlak <span style="color: green; font-weight: bold">ZIELONY</span><input type="checkbox" onclick="ToogleLayersWMS_Szlaki_Green()" id="tr_g"></li>
-							<li>Szlak <span style="color: blue; font-weight: bold">NIEBIESKI</span><input type="checkbox" onclick="ToogleLayersWMS_Szlaki_Blue()" id="tr_b"></li>
-							<li>Szlak <span style="color: red; font-weight: bold">CZERWONY</span><input type="checkbox" onclick="ToogleLayersWMS_Szlaki_Red()" id="tr_r"></li>
-							<li>Szlak <span style="color: black; font-weight: bold">CZARNY</span><input type="checkbox" onclick="ToogleLayersWMS_Szlaki_Black()" id="tr_bl"></li>
-						</ul>
-					</div>
-					<div class="bg"></div>
+				
+				<div id="wrapper" class="popup-div-novisible"> 
+					<header>Szlaki Turystyczne
+						<div class="btn-close" onclick="CloseWrapper()"></div>
+					</header>
+					<div class="content">
+						<p>
+							<ul>
+								<li>Szlak <span style="color: #ffbf00; font-weight: bold">ŻÓŁTY</span><input type="checkbox" onclick="ToogleLayersWMS_Szlaki_Yellow()" id="tr_y"></li>
+								<li>Szlak <span style="color: green; font-weight: bold">ZIELONY</span><input type="checkbox" onclick="ToogleLayersWMS_Szlaki_Green()" id="tr_g"></li>
+								<li>Szlak <span style="color: blue; font-weight: bold">NIEBIESKI</span><input type="checkbox" onclick="ToogleLayersWMS_Szlaki_Blue()" id="tr_b"></li>
+								<li>Szlak <span style="color: red; font-weight: bold">CZERWONY</span><input type="checkbox" onclick="ToogleLayersWMS_Szlaki_Red()" id="tr_r"></li>
+								<li>Szlak <span style="color: black; font-weight: bold">CZARNY</span><input type="checkbox" onclick="ToogleLayersWMS_Szlaki_Black()" id="tr_bl"></li>
+							</ul>
+						</p>
+						<div class="bg"></div>
+					</div>	
 				</div>
 			</div>
 		</div>

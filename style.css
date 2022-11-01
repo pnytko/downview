@@ -167,17 +167,68 @@ user-select: none;
 	  overflow: hidden;
 }
 
-#trails-popup{
+#wrapper{
   position: absolute;
-  width: 18%;
-  height: 25%;
-  z-index: 2;
-  top: 25%;
-  right: 1%;
-  border: 1px solid #000;
-  background-color: transparent;
-  border-radius: 8px;
   overflow: hidden;
+  width: 450px;
+  top: 40%;
+  left: 85%;
+  border-radius: 10px;
+  z-index: 2;
+  transform: translate(-50%,-50%);
+  border: 1px solid black;
+  background-color: transparent;
+}
+
+#wrapper header{
+  color:red;
+  font-size: 23px;
+  font-weight: 520;
+  padding: 17px 30px;
+  border-bottom: 1px solid #bfbfbf;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#wrapper .content{
+  margin: 30px 30px 40px;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#wrapper .bg{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #fff;
+	opacity: .75;
+	z-index: -1;
+}
+
+#wrapper header .btn-close{
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  right: 15px;
+  top: 15px;
+  background-color: #ff0000;
+  color: #fff;
+  line-height: 30px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 10px;
+  border: 1px solid black;
+  opacity: 0.5;
+}
+
+#wrapper header .btn-close:hover {
+  opacity: 1
 }
 
 #popup-div .bg{
@@ -191,25 +242,9 @@ user-select: none;
 	z-index: -1;
 }
 
-#trails-popup .bg{
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	background-color: #fff;
-	opacity: .75;
-	z-index: -1;
-}
-
 #popup-div .control-bar{
     width: 100%;
     height: 50px;
-}
-
-#trails-popup .control-bar{
-  width: 100%;
-  height: 50px;
 }
 
 #popup-div .control-bar .btn-close{
@@ -231,28 +266,6 @@ user-select: none;
 }
 
 #popup-div .control-bar .btn-close:hover {
-  opacity: 1
-}
-
-#trails-popup .control-bar .btn-close{
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  right: 10px;
-  top: 10px;
-  background-color: #ff0000;
-  color: #fff;
-  line-height: 30px;
-  text-align: center;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 20px;
-  border-radius: 5px;
-  border: 1px solid black;
-  opacity: .5;
-}
-
-#trails-popup .control-bar .btn-close:hover {
   opacity: 1
 }
 
@@ -382,6 +395,7 @@ user-select: none;
 
   background: url('img/E_hover.png');
 }
+
 .W{
 position: absolute;
 top: 57px;
@@ -427,31 +441,3 @@ user-select: none;
   visibility: hidden;
 }
 
-.wrapper{
-  background: #fff;
-  width: 450px;
-  top: 50%;
-  left: 50%;
-  position: absolute;
-  border-radius: 10px;
-  z-index: 9999;
-  transform: translate(-50%,-50%);
-}
-
-.wrapper header{
-  color:red;
-  font-size: 23px;
-  font-weight: 500;
-  padding: 17px 30px;
-  border-bottom: 1px solid #bfbfbf;
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
-}
-
-.wrapper .content{
-  margin: 30px 30px 40px;
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
-}

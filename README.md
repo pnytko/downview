@@ -41,6 +41,9 @@ So, I go hiking and used Strava software to track my hike. I export .gpx file fr
 
 ![image](https://user-images.githubusercontent.com/92880201/197759229-1f6b70f2-0096-4d9d-aec3-275fe3d7642a.png)
 
+#### 01.11.2022 -  Completely new pop-up with drag-and-drop function and better design
+
+![image](https://user-images.githubusercontent.com/92880201/199318134-d7f312e8-7d28-4e29-adcc-479af9dd109b.png)
 
 # TODO
 

@@ -14,16 +14,17 @@ function ClosePopup(){
 }
 
 //AKTYWACJA POPUP'A SZLAKI
-function DisplayPopupDiv_trails(){
-  let popup_trails = document.querySelector('#trails-popup');
+function DisplayWrapper(){
+  let popup_trails = document.querySelector('#wrapper');
 
   if(popup_trails.classList.contains('popup-div-visible')==false){
       popup_trails.classList.remove('popup-div-novisible');
       popup_trails.classList.add('popup-div-visible');
   }
 }
-function ClosePopup_trails(){
-  let popupdiv_trails=document.querySelector('#trails-popup');
+function CloseWrapper(){
+  let popupdiv_trails=document.querySelector('#wrapper');
   popupdiv_trails.classList.remove('popup-div-visible');
   popupdiv_trails.classList.add('popup-div-novisible');
 }
+

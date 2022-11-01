@@ -305,7 +305,7 @@ var markers = new ol.layer.Vector({
 
 //Temp. Popup func
 
-  const wrapper = document.querySelector(".wrapper"),
+  const wrapper = document.querySelector("#wrapper"),
   header = wrapper.querySelector("header")
 
   function onDrag({movementX, movementY}){
