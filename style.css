@@ -120,7 +120,7 @@ user-select: none;
 	font-size: 16px;
 	margin: 4px 2px;
 	opacity: 0.6;
-	transition: 0.3s;
+  transition: all .5s;
 	display: inline-block;
 	text-decoration: none;
 	cursor: pointer;
@@ -144,6 +144,7 @@ user-select: none;
 
 #aboutbutton:hover{
   opacity: 1;
+  transition: all .5s;
 }
 
 .popup-div-visible{
@@ -226,10 +227,12 @@ user-select: none;
   border-radius: 10px;
   border: 1px solid black;
   opacity: 0.5;
+  transition: all .5s;
 }
 
 #wrapper header .btn-close:hover {
-  opacity: 1
+  opacity: 1;
+  transition: all .5s;
 }
 
 #popup-div .bg{
@@ -352,11 +355,13 @@ user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  transition: all .5s;
+
 }
 
 #download_pdf:hover {
-
-  opacity: 100%;
+opacity: 100%;
+transition: all .5s;
 }
 
 .N:hover {
@@ -377,7 +382,6 @@ user-select: none;
 }
 
 .S:hover {
-
   background: url('img/S_hover.png');
 }
 
