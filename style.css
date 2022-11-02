@@ -238,6 +238,7 @@ transition: all .5s;
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  cursor: move;
 }
 
 
@@ -307,6 +308,8 @@ transition: all .5s;
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  display: flex;
+  cursor: move;
 }
 
 
