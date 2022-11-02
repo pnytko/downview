@@ -57,3 +57,6 @@ So, I go hiking and used Strava software to track my hike. I export .gpx file fr
 - [x] Branch cleanup (create a develop branch)
 - [x] PopUp refactoring (dragging feature)
 - [ ] Customize your shapes with button
+
+# bugTODO
+- [ ] Uncheck checkbox "Szlaki" when close_btn (jquery?)

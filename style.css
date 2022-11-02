@@ -288,9 +288,9 @@ transition: all .5s;
 #wrapper-about{
   position: absolute;
   overflow: hidden;
-  width: 450px;
-  top: 30%;
-  left: 80%;
+  width: 850px;
+  top: 50%;
+  left: 50%;
   border-radius: 10px;
   z-index: 2;
   transform: translate(-50%,-50%);

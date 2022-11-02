@@ -303,24 +303,46 @@ var markers = new ol.layer.Vector({
   markers.getSource().addFeature(marker1);
   markers.getSource().addFeature(marker2);
 
-//Wrapper 
+//Wrapper Trails
 
-  const wrapper = document.querySelector("#wrapper-trails, #wrapper-about"),
-  header = wrapper.querySelector("header")
+  const wrapperTrails = document.querySelector("#wrapper-trails"),
+  headerTrails = wrapperTrails.querySelector("header")
 
   function onDrag({movementX, movementY}){
-    let getStyle = window.getComputedStyle(wrapper);
+    let getStyle = window.getComputedStyle(wrapperTrails);
     let left = parseInt (getStyle.left);
     let top = parseInt (getStyle.top);
-    wrapper.style.left = `${left + movementX}px`
-    wrapper.style.top = `${top + movementY}px`
+    wrapperTrails.style.left = `${left + movementX}px`
+    wrapperTrails.style.top = `${top + movementY}px`
 }
 
-  header.addEventListener("mousedown", ()=>{
-    header.addEventListener("mousemove", onDrag);
+  headerTrails.addEventListener("mousedown", ()=>{
+    headerTrails.addEventListener("mousemove", onDrag);
   });
 
   document.addEventListener("mouseup", ()=>{
-    header.removeEventListener("mousemove", onDrag);
+    headerTrails.removeEventListener("mousemove", onDrag);
+
+  });
+
+  //Wrapper About
+
+  const wrapperAbout = document.querySelector("#wrapper-about"),
+  headerAbout = wrapperAbout.querySelector("header")
+
+  function onDragWrapperAbout({movementX, movementY}){
+    let getStyle = window.getComputedStyle(wrapperAbout);
+    let left = parseInt (getStyle.left);
+    let top = parseInt (getStyle.top);
+    wrapperAbout.style.left = `${left + movementX}px`
+    wrapperAbout.style.top = `${top + movementY}px`
+}
+
+  headerAbout.addEventListener("mousedown", ()=>{
+    headerAbout.addEventListener("mousemove", onDragWrapperAbout);
+  });
+
+  document.addEventListener("mouseup", ()=>{
+    headerAbout.removeEventListener("mousemove", onDragWrapperAbout);
 
   });
