@@ -1,0 +1,85 @@
+.navi{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+    opacity: 50%;
+    }
+    
+.N{
+    position: absolute;
+    top: 23px;
+    right: 58px;
+    z-index: 11;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    }
+    
+.N:hover {
+    background: url("..\\img\\N_hover.png");
+  }
+  
+.S{
+  position: absolute;
+  top: 92px;
+  right: 58px;
+  z-index: 11;
+  height: 37px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  }
+  
+.S:hover {
+    background: url('..\\img\\S_hover.png');
+  }
+  
+.E{
+  position: absolute;
+  top: 57px;
+  right: 25px;
+  z-index: 11;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  }
+  
+.E:hover {
+    background: url('..\\img\\E_hover.png');
+  }
+  
+.W{
+  position: absolute;
+  top: 57px;
+  right: 91px;
+  z-index: 11;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  }
+  
+.W:hover {
+    background: url('..\\img\\W_hover.png');
+  }
+  
+  
+.C{
+  position: absolute;
+  top: 57px;
+  right: 58px;
+  z-index: 11;
+  height:40px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  }
+  
+.C:hover {
+    background: url('..\\img\\C_hover.png');
+  }

@@ -303,9 +303,9 @@ var markers = new ol.layer.Vector({
   markers.getSource().addFeature(marker1);
   markers.getSource().addFeature(marker2);
 
-//Temp. Popup func
+//Wrapper 
 
-  const wrapper = document.querySelector("#wrapper"),
+  const wrapper = document.querySelector("#wrapper-trails, #wrapper-about"),
   header = wrapper.querySelector("header")
 
   function onDrag({movementX, movementY}){

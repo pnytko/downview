@@ -10,12 +10,11 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/3.18.3/minified.js"></script>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.9.0/css/ol.css" type="text/css">
 	<link rel="stylesheet" href="./style.css">
+	<link rel="stylesheet" href=".\styles\measures.css">
+	<link rel="stylesheet" href=".\styles\directions.css">
 	<link rel="shortcut icon" href=".\img\favicon.ico">
 </head>
 <body>
-
-
-
 	<div class="logo">
 		<img src="img\logo.png" alt="alt"> 
 	</div>
@@ -24,16 +23,20 @@
 		<img src="img\export_as_pdf.png" alt="alt" id="eapdf"> 
 	</div>
 
+	<div id="customize_data">
+		<img src="img\customize_data.png" alt="alt" id="null"> 
+	</div>
+
 	<svg class = "navi" height="120px" width="120px">
 		<circle cx="60" cy="60" r="50" stroke="white" stroke-width="5" fill="red" />
 		Brak wsparcia dla SVG.
 	</svg> 
 
-	<div class="N"><img src="img\N.png" alt="alt" id="N" name ="dir" onclick="direction('N')"> </div>	
-	<div class="S"><img src="img\S.png" alt="alt" id="S" name ="dir" onclick="direction('S')"> </div>
-	<div class="E"><img src="img\E.png" alt="alt" id="E" name ="dir" onclick="direction('E')"> </div>
-	<div class="W"><img src="img\W.png" alt="alt" id="W" name ="dir" onclick="direction('W')"> </div>
-	<div class="C"><img src="img\C.png" alt="alt" id="C" name ="dir" onclick="direction()"> </div>
+	<div class="N"><img src="img\n.png" alt="alt" id="N" name ="dir" onclick="direction('N')"> </div>	
+	<div class="S"><img src="img\s.png" alt="alt" id="S" name ="dir" onclick="direction('S')"> </div>
+	<div class="E"><img src="img\e.png" alt="alt" id="E" name ="dir" onclick="direction('E')"> </div>
+	<div class="W"><img src="img\w.png" alt="alt" id="W" name ="dir" onclick="direction('W')"> </div>
+	<div class="C"><img src="img\c.png" alt="alt" id="C" name ="dir" onclick="direction()"> </div>
 
 	<div class="grid-container">
 		<div class="grid-1">
@@ -47,7 +50,7 @@
 					<input type="checkbox" onclick="ToggleLayersWMS_OrtoHD()" id="ortoHD-wms">OrtoHD<br>
 					<!-- <input type="checkbox" value="MiegMap" onclick="ToggleLayersWMS_MiegMap()" id="miegmap-wms">Mapa Miega<br> -->
 					<input type="checkbox" onclick="ToggleLayersWMS_Cieniowanie()" id="cieniowanie-wms">DEM<br>
-					<input type="checkbox" onclick={ToggleLayersWMS_Szlaki(this);DisplayWrapper()} id="szlaki-wms" >Szlaki<br>
+					<input type="checkbox" onclick={ToggleLayersWMS_Szlaki(this);DisplayWrapperTrails()} id="szlaki-wms" >Szlaki<br>
 					<input type="checkbox" onclick="ToggleLayersWMS_Jaskinie()" id="jaskinie-wms">Jaskinie<br>
 					
 				
@@ -85,7 +88,7 @@
 					</div>	
 					
 				<div id = "aboutdiv">		
-					<button id="aboutbutton" onclick="DisplayPopupDiv()">O aplikacji</button>
+					<button id="aboutbutton" onclick="DisplayWrapperAbout()">O aplikacji</button>
 				</div>
 			</div>
 		</div>
@@ -93,21 +96,22 @@
 		<div class="grid-2">
 			<div id="map" class="map">
 			<div id="mouse-position"></div>
-			<div id="popup-div" class="popup-div-novisible">
-				<div class="control-bar">
-					<div class="btn-close" onclick="ClosePopup()">x</div>
-				</div>
-				<h2 id="pop">O aplikacji Downview</h2>
-				<h3 id="pop">Czym jest i dla kogo jest aplikacja?</h3>
-					<p id="pop">Downview jest projektem niekomercyjnym wykonanym w celach edukacyjnych. Zakres map zawiera się dla powiatu tarnowskiego i
-					okolic, jednakże niektóre usługi (np. OrtoHD, OSM czy działki) dostępne są dla całej Polski. Projekt skupiony jest głównie na rozwiązaniach
-					dla map historycznych. Dostarczane usługi mogą być przydatne dla archeologów, historyków, odkrywców czy detektorystów.</p> 
-				<h3 id="pop">Podstawowe aspekty techniczne aplikacji</h3>
-					<p id="pop">Aplikacja korzysta z biblioteki OpenLayers6 i integruje
-					różne typy danych w postaci <b>warstw</b>. Część map funkcjonuje jako serwisy WMS, a część jako dane magazynowane na hostingu.</p>
-				<h3 id="pop">Podziękowania</h3>
-					<p id = "pop">Autor aplikacji pragnie podziękować za pomoc merytoryczną:</p>
-				<div id="pop">	
+			<div>
+				<div id="wrapper-about" class="popup-div-novisible"> 
+					<header>O Aplikacji
+						<div class="btn-close" onclick="CloseWrapperAbout()"></div>
+					</header>
+					<div class="content">
+						<p>
+						<h3>Czym jest i dla kogo jest aplikacja?</h3>
+						<p >Downview jest projektem niekomercyjnym wykonanym w celach edukacyjnych. Zakres map zawiera się dla powiatu tarnowskiego i
+						okolic, jednakże niektóre usługi (np. OrtoHD, OSM czy działki) dostępne są dla całej Polski. Projekt skupiony jest głównie na rozwiązaniach
+						dla map historycznych. Dostarczane usługi mogą być przydatne dla archeologów, historyków, odkrywców czy detektorystów.</p> 
+						<h3>Podstawowe aspekty techniczne aplikacji</h3>
+						<p>Aplikacja korzysta z biblioteki OpenLayers6 i integruje
+						różne typy danych w postaci <b>warstw</b>. Część map funkcjonuje jako serwisy WMS, a część jako dane magazynowane na hostingu.</p>
+						<h3>Podziękowania</h3>
+						<p>Autor aplikacji pragnie podziękować za pomoc merytoryczną:</p>
 					<ul>
 						<li>K.S.</li>
 						<li>K.Ł.</li>
@@ -115,13 +119,14 @@
 						<li>M.C.</li>
 					</ul>
 				</div>
-				
-				<div class="bg"></div>
+						</p>
+						<div class="bg"></div>
+					</div>	
 				</div>
-				
-				<div id="wrapper" class="popup-div-novisible"> 
+			</div>		
+				<div id="wrapper-trails" class="popup-div-novisible"> 
 					<header>Szlaki Turystyczne
-						<div class="btn-close" onclick="CloseWrapper()"></div>
+						<div class="btn-close" onclick="CloseWrapperTrails()"></div>
 					</header>
 					<div class="content">
 						<p>
