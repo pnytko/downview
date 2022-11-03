@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DownView</title>
-    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.9.0/build/ol.js"></script>
-	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/3.18.3/minified.js"></script>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.9.0/css/ol.css" type="text/css">
-	<link rel="stylesheet" href="./style.css">
-	<link rel="stylesheet" href=".\styles\measures.css">
-	<link rel="stylesheet" href=".\styles\directions.css">
-	<link rel="shortcut icon" href=".\img\favicon.ico">
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>DownView</title>
+		<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.9.0/build/ol.js"></script>
+		<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/3.18.3/minified.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.9.0/css/ol.css" type="text/css">
+		<link rel="stylesheet" href="./style.css">
+		<link rel="stylesheet" href=".\styles\measures.css">
+		<link rel="stylesheet" href=".\styles\directions.css">
+		<link rel="shortcut icon" href=".\img\favicon.ico">
+	</head>
+	
 	<body>
 		<div class="logo">
 			<img src="img\logo.png" alt="alt"> 
@@ -52,8 +53,7 @@
 						<input type="checkbox" onclick="ToggleLayersWMS_Cieniowanie()" id="cieniowanie-wms">DEM<br>
 						<input type="checkbox" onclick={ToggleLayersWMS_Szlaki(this);DisplayWrapperTrails()} id="szlaki-wms" >Szlaki<br>
 						<input type="checkbox" onclick="ToggleLayersWMS_Jaskinie()" id="jaskinie-wms">Jaskinie<br>
-						
-					
+									
 					<h3>POMIARY</h3>
 						<form class="form-inline">
 							<label for="type">Typ pomiaru:</label> </br> 
@@ -70,23 +70,22 @@
 
 						</form>
 
-					<h3>POŁOŻENIE</h3>
-					
-						<form>
+					<h3>POŁOŻENIE</h3>		
+						
+							<div id="navi_block">
 							<label for="projection">Projekcja:</label>
-							<div id="okienko">	
 								<select id="projection">
 									<option value="EPSG:4326">EPSG:4326</option>
 									<option value="EPSG:3857">EPSG:3857</option>
-								</select> </br> </br>
+								</select>
+							</div>
 								
-							<label for="precision">Precyzja (0-12)</label> </br>
-							<div id="okienko">
+							<div id="navi_block">	
+							<label for="precision">Precyzja (0-12)</label>
+							
 								<input id="precision" type="number" min="0" max="12" value="4"/>
 							</div>
-						</form>
-						</div>	
-						
+											
 					<div id = "aboutdiv">		
 						<button id="aboutbutton" onclick="DisplayWrapperAbout()">O aplikacji</button>
 					</div>
@@ -97,7 +96,7 @@
 				<div id="map" class="map">
 				<div id="mouse-position"></div>
 				<div>
-					<div id="wrapper-about" class="popup-div-novisible"> 
+					<div id="wrapper-about" class="wrapper-unvisible"> 
 						<header>O Aplikacji
 							<div class="btn-close" onclick="CloseWrapperAbout()"></div>
 						</header>
@@ -124,7 +123,7 @@
 						</div>	
 				</div>
 		
-					<div id="wrapper-trails" class="popup-div-novisible"> 
+					<div id="wrapper-trails" class="wrapper-unvisible"> 
 						<header>Szlaki Turystyczne
 							<div class="btn-close" onclick="CloseWrapperTrails()"></div>
 						</header>
