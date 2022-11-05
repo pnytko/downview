@@ -11,6 +11,18 @@ body {
   overflow: hidden;
 }
 
+p{
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.sidebar{
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 #osm-wms {
   margin-right: 10px;
 }
@@ -94,6 +106,9 @@ body {
 
 #navi_block {
   margin-top: 20px;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 #clearbtn {
@@ -148,6 +163,7 @@ body {
   height: 25px;
   text-align: center;
   border-radius: 5px;
+  
 }
 
 #precision {

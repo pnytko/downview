@@ -6,10 +6,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>DownView</title>
 		<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.9.0/build/ol.js"></script>
-		<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/3.18.3/minified.js"></script>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.9.0/css/ol.css" type="text/css">
-		<link rel="stylesheet" href="./style.css">
+		<link rel="stylesheet" href=".\style.css">
 		<link rel="stylesheet" href=".\styles\measures.css">
 		<link rel="stylesheet" href=".\styles\directions.css">
 		<link rel="shortcut icon" href=".\img\favicon.ico">
@@ -57,7 +56,7 @@
 					<h3>POMIARY</h3>
 						<form class="form-inline">
 							<label for="type">Typ pomiaru:</label> </br> 
-							<div id="okienko">	
+							<div id="navi-block">	
 								<select id="type">
 									<option value="length">Długość</option>
 									<option value="area">Powierzchnia</option>
@@ -82,7 +81,6 @@
 								
 							<div id="navi_block">	
 							<label for="precision">Precyzja (0-12)</label>
-							
 								<input id="precision" type="number" min="0" max="12" value="4"/>
 							</div>
 											
