@@ -434,3 +434,15 @@ p{
   opacity: 1;
   transition: all 0.5s;
 }
+
+.row {
+  margin: 30px 30px 40px;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+}
