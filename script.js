@@ -344,3 +344,25 @@ headerAbout.addEventListener("mousedown", () => {
 document.addEventListener("mouseup", () => {
   headerAbout.removeEventListener("mousemove", onDragWrapperAbout);
 });
+
+//Wrapper About
+
+const wrapperCustomize = document.querySelector("#wrapper-customize"),
+  headerCustomize = wrapperCustomize.querySelector("header");
+
+function onDragWrapperCustomize({ movementX, movementY }) {
+  let getStyle = window.getComputedStyle(wrapperCustomize);
+  let left = parseInt(getStyle.left);
+  let top = parseInt(getStyle.top);
+  wrapperCustomize.style.left = `${left + movementX}px`;
+  wrapperCustomize.style.top = `${top + movementY}px`;
+}
+
+headerCustomize.addEventListener("mousedown", () => {
+  headerCustomize.addEventListener("mousemove", onDragWrapperCustomize);
+});
+
+document.addEventListener("mouseup", () => {
+  headerCustomize.removeEventListener("mousemove", onDragWrapperCustomize);
+});
+

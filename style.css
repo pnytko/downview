@@ -364,3 +364,73 @@ p{
   opacity: 1;
   transition: all 0.5s;
 }
+
+/* Popup Customize*/
+
+#wrapper-customize {
+  position: absolute;
+  overflow: hidden;
+  width: 850px;
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  border: 1px solid black;
+  background-color: transparent;
+}
+
+#wrapper-customize header {
+  color: red;
+  font-size: 23px;
+  font-weight: 520;
+  padding: 17px 30px;
+  border-bottom: 1px solid #bfbfbf;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: flex;
+  cursor: move;
+}
+
+#wrapper-customize .content {
+  margin: 30px 30px 40px;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#wrapper-customize .bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  opacity: 0.75;
+  z-index: -1;
+}
+
+#wrapper-customize header .btn-close {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  right: 15px;
+  top: 15px;
+  background-color: #ff0000;
+  color: #fff;
+  line-height: 30px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 10px;
+  border: 1px solid black;
+  opacity: 0.5;
+  transition: all 0.5s;
+}
+
+#wrapper-customize header .btn-close:hover {
+  opacity: 1;
+  transition: all 0.5s;
+}
