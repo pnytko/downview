@@ -446,3 +446,15 @@ p{
 .column {
   flex: 50%;
 }
+
+input[type="range"] {
+  width: 170px;
+  margin: 0;
+  accent-color: #ff0000;
+}
+
+#pet-select{
+ width: 170px;
+ border: none;
+ padding-left: 5%;
+}

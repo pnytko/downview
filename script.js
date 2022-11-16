@@ -365,18 +365,3 @@ headerCustomize.addEventListener("mousedown", () => {
 document.addEventListener("mouseup", () => {
   headerCustomize.removeEventListener("mousemove", onDragWrapperCustomize);
 });
-
-var mySlider = new CanvasSlider({
-  canvas: "mySlider",
-  range: {min: 0, max: 100, count: 5},
-  start: [100],
-  snapToTicks: true,
-  showLabels: true,
-  showMajorTicks: true,
-  showMinorTicks: false,
-  showToolTip: true,
-  showValueBox: false,
-  format: {decimals: 0, prefix: "", suffix: ""},
-  handle: {shape: "ellipse", w: 20, h: 20, hue: 240},
-  baseColor: {h: 359, s: 100, v: 100}
-});
