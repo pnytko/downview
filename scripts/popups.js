@@ -26,6 +26,7 @@ function CloseWrapperTrails() {
   let popupdiv_trails = document.querySelector("#wrapper-trails");
   popupdiv_trails.classList.remove("wrapper-visible");
   popupdiv_trails.classList.add("wrapper-unvisible");
+  $("#szlaki-wms").prop("checked", false)
 }
 
 //AKTYWACJA WRAPPERA CUSTOMIZE YOUT TRAILS

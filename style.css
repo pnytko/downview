@@ -204,12 +204,30 @@ p{
   transition: all 0.5s;
 }
 
+#create_marker {
+  position: absolute;
+  top: 260px;
+  right: 54px;
+  z-index: 10;
+  opacity: 50%;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: all 0.5s;
+}
+
 #download_pdf:hover {
   opacity: 100%;
   transition: all 0.5s;
 }
 
 #customize_data:hover {
+  opacity: 100%;
+  transition: all 0.5s;
+}
+
+#create_marker:hover {
   opacity: 100%;
   transition: all 0.5s;
 }

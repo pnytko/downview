@@ -59,4 +59,4 @@ So, I go hiking and used Strava software to track my hike. I export .gpx file fr
 - [ ] Customize your shapes with button
 
 # bugTODO
-- [ ] Uncheck checkbox "Szlaki" when close_btn (jquery?)
+- [x] Uncheck checkbox "Szlaki" when close_btn (jquery?)
